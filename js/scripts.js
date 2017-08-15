@@ -2,15 +2,17 @@ $(document).ready(function() {
   $("#puzzleInput").submit(function(event){
     var vowels =["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"];
     var sentenceInput = $("input#sentence").val();
-    var letters = sentenceInput.split();
-    var result = [];
+    var letters = sentenceInput.split("");
+    var result = "";
 
     for (var index = 0; index < letters.length; index += 1) {
-      if (letters = vowels[0] || vowels[1] || vowels[2] || vowels[3] || vowels[4] || vowels[5] || vowels[6] || vowels[7] || vowels[8] || vowels[9] || vowels[10]) {
-        result.replace(letters, "-").push
+      if (vowels.includes(letters[index])){
+      // if (letters[index] === vowels[0] || letters[index] ===  vowels[1] || letters[index] ===  vowels[2] || letters[index] === vowels[3] || letters[index] === vowels[4] || letters[index] === vowels[5] || letters[index] === vowels[6] || letters[index] === vowels[7] || letters[index] === vowels[8] || letters[index] === vowels[9] || letters[index] === vowels[10]) {
+        result += "-";
       }
       else {
-        letters += result(index);
+        // debugger;
+        result += letters[index];
       }
     }
   $("#outPut").text(result);
